@@ -4,8 +4,8 @@
 #include "SoftwareSerial.h"                                    
 #include "DHTesp.h"
 
-const char*     ssid =  "Waldnetz";
-const char* password =  "1624816248";
+const char*     ssid =  "your-ssid";
+const char* password =  "your-password";
  
 
 #define RX_PIN 33                                          // Rx pin which the MHZ19 Tx pin is attached to
