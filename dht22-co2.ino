@@ -31,9 +31,8 @@ void setup()
 
     myMHZ19.autoCalibration();                              // Turn auto calibration ON (OFF autoCalibration(false))
 
-    // WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
     WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println("Connecting to WiFi..");
    }
