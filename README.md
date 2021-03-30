@@ -19,4 +19,4 @@ Nach der Anmeldung muss ein neuer Channel angelegt werden. Es macht Sinn gleich 
 
 2) Ausgabe der Messwerte im Display
 
-Als erstes ist die Library LiquidCrystal_I2C herunterzuladen und zu entpacken. Das Master-Verzeichnis umbenennen in "LiquidCrystal_I2C" und in das Library Verzeichnis der Arduino IDE packen.
+Als erstes ist die Library [LiquidCrystal_I2C](https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip) herunterzuladen und zu entpacken. Das Master-Verzeichnis umbenennen in "LiquidCrystal_I2C" und in das Library Verzeichnis der Arduino IDE packen.
