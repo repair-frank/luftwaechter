@@ -36,6 +36,8 @@ ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 be
 ### Arduino IDE
 1. ESP32 an PC anschließen, neues sketch erstellen, Code einfügen, Anpassungen durchführen (Wifi, Thingspeak, Display), überprüfen und hochladen
 2. Ausgabe über seriellen Monitor beachten
+### Messen
+Aufstellungsort sollte nicht direkt im Durchzug und nicht zu nah an Störquellen sein. Frohes Messen!
 
 ## Anbindung an Thingspeak
 Ich nutze dazu einen kostenlosen Account (vier Channel möglich, einer reicht für das Messgerät)
