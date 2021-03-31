@@ -3,12 +3,12 @@
 Im Original von repair-frank als reine Messaperatur mit Ausgabe über eigenen Webserver
 "CO2-Temperatur-Feuchtigkeits-Sensor mit ESP32 und MH-Z19B, DHT22 und WLAN-Funktionalität
 
-libraries.zip herunterladen und entpacken in ~/Arduino/libraries"
+`libraries.zip` herunterladen und entpacken in ~/Arduino/libraries"
 
 Ich habe das ganze noch etwas erweitert und modifiziert:
 
 ## Aufbau CO2 Monitor
-Reichelt hat eine etwas ausführlichere Anleitung parat. https://www.reichelt.de/magazin/reichelt-magazin/co2-messgeraet-einfach-und-guenstig-selber-bauen/
+[Reichelt](https://www.reichelt.de/magazin/reichelt-magazin/co2-messgeraet-einfach-und-guenstig-selber-bauen/) hat eine etwas ausführlichere Anleitung parat.
 
 Kurzform:
 ### Benötigt werden
@@ -50,7 +50,7 @@ Nach der Anmeldung muss ein neuer Channel angelegt werden. Es macht Sinn gleich 
 ## Ausgabe der Messwerte im Display
 Ausgabe der aktuellen Messung (CO2 und Temperatur) über Display
 ### Library einrichten
-Als erstes ist die Library [LiquidCrystal_I2C](https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip) herunterzuladen und zu entpacken (Archiv vom 31/03/2021 ist im Git enthalten). Das Master-Verzeichnis umbenennen in "LiquidCrystal_I2C" und in das Library Verzeichnis der Arduino IDE packen und anschließend Arduino IDE neustarten.
+Als erstes ist die Library [LiquidCrystal_I2C](https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip) herunterzuladen und zu entpacken (Archiv vom 31/03/2021 ist im Git enthalten). Das Master-Verzeichnis umbenennen in `LiquidCrystal_I2C` und in das Library Verzeichnis der Arduino IDE packen und anschließend Arduino IDE neustarten.
 
 ### I2C Adresse finden
 Um die korrekte Adresse des Displays zu erhalten folgende sketch auf den ESP32 hochladen
@@ -120,4 +120,6 @@ void scrollText(int row, String message, int delayTime, int lcdColumns) {
 ```
 Als Übergabeparameter dienen row (0 oder 1), message (Text der Zeile), delayTime (Verbleib in ms auf einer Zelle des Displays) und lcdColums (Anzahl Spalten des LCD, bereits im Code definiert).
 
-## Anzeige der aktuellen CO2 Lage anhand einer Ampel 
+## Anzeige der aktuellen CO2 Lage anhand einer Ampel
+
+Kommt später!
