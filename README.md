@@ -18,7 +18,7 @@ Kurzform:
 | MH-Z19C           | Lötzinn           |
 | DHT22             | Pinzette          |
 | LCD 16x2          | Platinenhalter    |
-| IIC/I2C Interface |                   |
+| IIC/I2C Interface | PC                |
 | LED rot           |
 | LED gelb          |
 | LED grün          |
@@ -32,14 +32,23 @@ Kurzform:
 | Buchsen & Stifte  |
 | Abstandhalter     |
 | Schrauben         |
-
+### Hardware
+ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 berücksichtigen (3cm sind ein gutes Maß). Verdrahtung gemäß Schaltskizze durchführen. Eventuell Trennstellen mit Stiftleiste und Buchse vorsehen, um beispielsweise die Gehäuseoberseite inklusive Display entfernen zu können.
+### Software (je nach ESP32 Board teilweise unterschiedlich)
+1. [Arduino IDE installieren](https://www.arduino.cc/en/software), unter Werkzeuge -> Board muss `ESP32 Dev Module` ausgewählt werden, Baudrate `115200`. Sollte das nicht direkt möglich sein ist unter Datei -> Voreinstellungen eine zusätzliche Boardverwalter-URL einzutragen: `https://dl.espressif.com/dl/package_esp32_index.json`, unter Werkzeuge -> Bibliotheksverwalter `ESPAsync_WiFiManager` und `ESPSoftwareSerial` installieren. Anschließend kann `ESP32 Dev Module` ausgewählt werden.
+2. Als nächstes aktualisierten [CP210x USB-UART Treiber](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) für das passende Betriebssystem herunterladen und installieren. 
+3. Offizielle [ESP32 Bibliothek](https://github.com/espressif/arduino-esp32) herunterladen, entpacken in „hardware“ Arduino-Verzeichnis
+4. Neustart Arduino IDE
+### Arduino IDE
+1. ESP32 an PC anschließen, neues sketch erstellen, Code einfügen, Anpassungen durchführen (Wifi, Thingspeak, Display), überprüfen und hochladen
+2. Ausgabe über seriellen Monitor beachten
 
 ## Anbindung an Thingspeak
 Ich nutze dazu einen kostenlosen Account (vier Channel möglich, einer reicht für das Messgerät)
 Nach der Anmeldung muss ein neuer Channel angelegt werden. Es macht Sinn gleich der Messgrößen entsprechende Fields anzulegen und diese entsprechend zu benennen (Field 1: Temperatur, Field 2: Feuchtigkeit, Field 3: CO2, Field 4: CO2 Sensor Temperatur), auch der Name des Channels selbst sollte befüllt werden. Unter Api Keys kann die URL unter Write a Channel Feed gefunden werden und im Code ersetzt werden. Die entsprechenden Daten werden den Fields mittels der URL alle 60 Sekunden übertragen, ein kürzerer Intervall ist in der kostenlosen Variante von Thingspeak nicht zu empfehlen.
 
 ## Ausgabe der Messwerte im Display
-
+Ausgabe der aktuellen Messung (CO2 und Temperatur) über Display
 ### Library einrichten
 Als erstes ist die Library [LiquidCrystal_I2C](https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip) herunterzuladen und zu entpacken (Archiv vom 31/03/2021 ist im Git enthalten). Das Master-Verzeichnis umbenennen in "LiquidCrystal_I2C" und in das Library Verzeichnis der Arduino IDE packen und anschließend Arduino IDE neustarten.
 
