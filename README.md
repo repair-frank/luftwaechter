@@ -1,12 +1,5 @@
 # luftwaechter 2.0
-
-Im Original von repair-frank als reine Messaperatur mit Ausgabe über eigenen Webserver
-"CO2-Temperatur-Feuchtigkeits-Sensor mit ESP32 und MH-Z19B, DHT22 und WLAN-Funktionalität
-
-`libraries.zip` herunterladen und entpacken in ~/Arduino/libraries"
-
-Ich habe das ganze noch etwas erweitert und modifiziert:
-
+Im Original von repair-frank: CO2-Temperatur-Feuchtigkeits-Sensor mit ESP32 und MH-Z19B, DHT22 und WLAN-Funktionalität. Ich habe das ganze noch etwas erweitert und modifiziert:
 ## Aufbau CO2 Monitor
 [Reichelt](https://www.reichelt.de/magazin/reichelt-magazin/co2-messgeraet-einfach-und-guenstig-selber-bauen/) hat eine etwas ausführlichere Anleitung parat.
 
@@ -37,8 +30,9 @@ ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 be
 ### Software (je nach ESP32 Board teilweise unterschiedlich)
 1. [Arduino IDE installieren](https://www.arduino.cc/en/software), unter Werkzeuge -> Board muss `ESP32 Dev Module` ausgewählt werden, Baudrate `115200`. Sollte das nicht direkt möglich sein ist unter Datei -> Voreinstellungen eine zusätzliche Boardverwalter-URL einzutragen: `https://dl.espressif.com/dl/package_esp32_index.json`, unter Werkzeuge -> Bibliotheksverwalter `ESPAsync_WiFiManager` und `ESPSoftwareSerial` installieren. Anschließend kann `ESP32 Dev Module` ausgewählt werden.
 2. Als nächstes aktualisierten [CP210x USB-UART Treiber](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) für das passende Betriebssystem herunterladen und installieren. 
-3. Offizielle [ESP32 Bibliothek](https://github.com/espressif/arduino-esp32) herunterladen, entpacken in „hardware“ Arduino-Verzeichnis
-4. Neustart Arduino IDE
+3. Offizielle [ESP32 Bibliothek](https://github.com/espressif/arduino-esp32) herunterladen, entpacken in `~/Arduino/hardware`
+4. `libraries.zip` herunterladen und entpacken in `~/Arduino/libraries`
+5. Neustart Arduino IDE
 ### Arduino IDE
 1. ESP32 an PC anschließen, neues sketch erstellen, Code einfügen, Anpassungen durchführen (Wifi, Thingspeak, Display), überprüfen und hochladen
 2. Ausgabe über seriellen Monitor beachten
@@ -50,7 +44,7 @@ Nach der Anmeldung muss ein neuer Channel angelegt werden. Es macht Sinn gleich 
 ## Ausgabe der Messwerte im Display
 Ausgabe der aktuellen Messung (CO2 und Temperatur) über Display
 ### Library einrichten
-Als erstes ist die Library [LiquidCrystal_I2C](https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip) herunterzuladen und zu entpacken (Archiv vom 31/03/2021 ist im Git enthalten). Das Master-Verzeichnis umbenennen in `LiquidCrystal_I2C` und in das Library Verzeichnis der Arduino IDE packen und anschließend Arduino IDE neustarten.
+Als erstes ist die Library [LiquidCrystal_I2C](https://github.com/marcoschwartz/LiquidCrystal_I2C/archive/master.zip) herunterzuladen und zu entpacken (Archiv vom 31/03/2021 ist im Git enthalten). Das Master-Verzeichnis umbenennen in `LiquidCrystal_I2C` und in `~/Arduino/Library` packen und anschließend Arduino IDE neustarten.
 
 ### I2C Adresse finden
 Um die korrekte Adresse des Displays zu erhalten folgende sketch auf den ESP32 hochladen
