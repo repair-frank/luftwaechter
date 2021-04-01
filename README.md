@@ -28,11 +28,11 @@ Kurzform:
 ### Hardware
 ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 berücksichtigen (3cm sind ein gutes Maß). Verdrahtung gemäß Schaltskizze durchführen. Eventuell Trennstellen mit Stiftleiste und Buchse vorsehen, um beispielsweise die Gehäuseoberseite inklusive Display entfernen zu können.
 ### Software (je nach ESP32 Board teilweise unterschiedlich)
-1. [Arduino IDE installieren](https://www.arduino.cc/en/software), unter Werkzeuge -> Board muss `ESP32 Dev Module` ausgewählt werden, Baudrate `115200`. Sollte das nicht direkt möglich sein ist unter Datei -> Voreinstellungen eine zusätzliche Boardverwalter-URL einzutragen: `https://dl.espressif.com/dl/package_esp32_index.json`, unter Werkzeuge -> Bibliotheksverwalter `ESPAsync_WiFiManager` und `ESPSoftwareSerial` installieren. Anschließend kann `ESP32 Dev Module` ausgewählt werden.
+1. [Arduino IDE installieren](https://www.arduino.cc/en/software)
 2. Als nächstes aktualisierten [CP210x USB-UART Treiber](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) für das passende Betriebssystem herunterladen und installieren. 
 3. Offizielle [ESP32 Bibliothek](https://github.com/espressif/arduino-esp32) herunterladen, entpacken in `~/Arduino/hardware`
 4. `libraries.zip` herunterladen und entpacken in `~/Arduino/libraries`
-5. Neustart Arduino IDE
+5. Neustart Arduino IDE, unter Werkzeuge -> Board muss `ESP32 Dev Module` ausgewählt werden, Baudrate `115200`.
 ### Arduino IDE
 1. ESP32 an PC anschließen, neues sketch erstellen, Code einfügen, Anpassungen durchführen (Wifi, Thingspeak, Display), überprüfen und hochladen
 2. Ausgabe über seriellen Monitor beachten
