@@ -26,6 +26,8 @@ Kurzform:
 | Abstandhalter     |
 | Schrauben         |
 ### Hardware
+Ich nutze die Entwicklungsplatine NodeMCU mit ESP32 von Joy-IT, diese besitzt 30 Pins (siehe Schaltskizze). Bei anderen Platinen ist selbstverständlich eine Prüfung und Anpassung der Pins notwendig!
+
 ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 berücksichtigen (3cm sind ein gutes Maß). Verdrahtung gemäß Schaltskizze durchführen. Eventuell Trennstellen mit Stiftleiste und Buchse vorsehen, um beispielsweise die Gehäuseoberseite inklusive Display entfernen zu können.
 ### Software (je nach ESP32 Board teilweise unterschiedlich)
 1. [Arduino IDE installieren](https://www.arduino.cc/en/software)
