@@ -26,9 +26,10 @@ Kurzform:
 | Abstandhalter     |
 | Schrauben         |
 ### Hardware
-Ich nutze die Entwicklungsplatine NodeMCU mit ESP32 von Joy-IT, diese besitzt 30 Pins (siehe Schaltskizze). Bei anderen Platinen ist selbstverständlich eine Prüfung und Anpassung der Pins notwendig!
+Ich nutze die Entwicklungsplatine NodeMCU mit ESP32 von Joy-IT, diese besitzt 30 Pins (siehe Schaltskizze). Bei anderen Platinen ist selbstverständlich eine Prüfung und Anpassung der Pins notwendig! Der CO2 Sensor besitzt eine AUTOCALIBRATION, er nutzt dabei den tiefsten gemessenen Wert aus den letzten 24 Stunden als Grundwert (400ppm) und gleicht diesen auch mit Werten aus vorherigen Wochen ab. Daher ist es ratsam einmal am Tag dem Sensor eine ordentliche Portion Frischluft zuzuführen.
 
 ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 berücksichtigen (3cm sind ein gutes Maß). Verdrahtung gemäß Schaltskizze durchführen. Eventuell Trennstellen mit Stiftleiste und Buchse vorsehen, um beispielsweise die Gehäuseoberseite inklusive Display entfernen zu können.
+
 ### Software (je nach ESP32 Board teilweise unterschiedlich)
 1. [Arduino IDE installieren](https://www.arduino.cc/en/software)
 2. Unter Datei -> Voreinstellungen die URLs `https://dl.espressif.com/dl/package_esp32_index.json, http://arduino.esp8266.com/stable/package_esp8266com_index.json` unter zusätzliche Boardverwalter-URLs eintragen und unter Werkzeuge -> Bibliotheken verwalten `esp32`von `Espressif Systems` installieren.
@@ -120,5 +121,14 @@ void scrollText(int row, String message, int delayTime, int lcdColumns) {
 Als Übergabeparameter dienen row (0 oder 1), message (Text der Zeile), delayTime (Verbleib in ms auf einer Zelle des Displays) und lcdColums (Anzahl Spalten des LCD, bereits im Code definiert).
 
 ## Anzeige der aktuellen CO2 Lage anhand einer Ampel
+Leds sind schon in der Schaltskizze eingebaut. Programmiertechnisch ist das letzte Wort noch nicht gesprochen.
 
-Kommt später!
+## Erweiterungen
+- Das Display ist recht hell, vielleicht lässt es sich noch etwas dimmen oder abschalten wenn nicht benötigt
+- Momentan läuft der CO2 Sensor auf AUTOCALIBRATION, ein händisches kalibrieren ist auch möglich und könnte zusätzlich angeboten werden
+
+## nützliche Links
+- [MH-Z19](https://github.com/WifWaf/MH-Z19) Library von Jonathan Dempsey
+- Kein Unsinn aber viel Text und Wissen bei der [Unsinnbasis](https://unsinnsbasis.de/co2-sensor-mhz19b)
+- [Reichelt](https://www.reichelt.de/magazin/reichelt-magazin/co2-messgeraet-einfach-und-guenstig-selber-bauen/)
+
