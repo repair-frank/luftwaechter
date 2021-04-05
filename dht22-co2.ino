@@ -8,8 +8,8 @@
 
 
 // Wifi Setup
-const char* ssid =  "FRITZ!Box Fon WLAN 7270";
-const char* password =  "wzwzsmartwzwz";
+const char* ssid =  "<SSID>";
+const char* password =  "<passwort>";
  
 // CO2 Sensor Setup
 #define RX_PIN 33                                          // Rx pin which the MHZ19 Tx pin is attached to
@@ -32,7 +32,7 @@ MHZ19 myMHZ19;                                             // Constructor for li
 SoftwareSerial mySerial(RX_PIN, TX_PIN);                   // create device to MH-Z19 serial
 
 //  Thingspeak Setup
-String serverName = "https://api.thingspeak.com/update?api_key=O09C1IU3YRV5ET0F";
+String serverName = "https://api.thingspeak.com/update?api_key=<Thingspeak Write APi Key>";
 
 // 1602 Display Setup
 int lcdColumns = 16;
