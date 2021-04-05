@@ -8,8 +8,13 @@
 
 
 // Wifi Setup
+<<<<<<< HEAD
 const char* ssid =  "<SSID>";
 const char* password =  "<passwort>";
+=======
+const char* ssid =  "<deine_ssid>";
+const char* password =  "<wifi-passwort>";
+>>>>>>> parent of abb8a46 (Update dht22-co2.ino)
  
 // CO2 Sensor Setup
 #define RX_PIN 33                                          // Rx pin which the MHZ19 Tx pin is attached to
@@ -19,20 +24,18 @@ const char* password =  "<passwort>";
 // Temp&Humidity Sensor Setup
 #define dhtPin 4                                            // verbunden mit Data-Pin des DHT22
 
-// Ampel Setup
-#define LED_RED 25
-#define LED_YELLOW 26
-#define LED_GREEN 27
-#define LIMIT_GREEN 1000
-#define LIMIT_YELLOW 1200
-
 AsyncWebServer server(80);                                 // http port 80
 DHTesp dht;
 MHZ19 myMHZ19;                                             // Constructor for library
 SoftwareSerial mySerial(RX_PIN, TX_PIN);                   // create device to MH-Z19 serial
 
+
 //  Thingspeak Setup
+<<<<<<< HEAD
 String serverName = "https://api.thingspeak.com/update?api_key=<Thingspeak Write APi Key>";
+=======
+String serverName = "https://api.thingspeak.com/update?api_key=<dein-thingspeak-write-api-key>";
+>>>>>>> parent of abb8a46 (Update dht22-co2.ino)
 
 // 1602 Display Setup
 int lcdColumns = 16;
@@ -41,26 +44,7 @@ LiquidCrystal_I2C lcd(0x27, lcdColumns, lcdRows);           // LCD Adresse, Anza
 
 void setup()
 {
-    // Ampel: Pins als Ausgang festlegen
-    pinMode(LED_GREEN, OUTPUT);
-    pinMode(LED_YELLOW, OUTPUT);
-    pinMode(LED_RED, OUTPUT);
-    // alle LEDs ausschalten
-    digitalWrite(LED_GREEN, LOW);
-    digitalWrite(LED_YELLOW, LOW);
-    digitalWrite(LED_RED, LOW);
-    // Startsequenz der LEDs
-    digitalWrite(LED_GREEN, HIGH);
-    delay(250);
-    digitalWrite(LED_YELLOW, HIGH);
-    delay(250);
-    digitalWrite(LED_RED, HIGH);
-    delay(500);
-    digitalWrite(LED_GREEN, LOW);
-    digitalWrite(LED_YELLOW, LOW);
-    digitalWrite(LED_RED, LOW);
-    
-    // 1602 Display
+    // 1603 Display
     lcd.init();                                             // initialize LCD
     lcd.backlight();                                        // turn on LCD backlight
     
@@ -134,22 +118,6 @@ void loop()
   lcd.print(String("Temp: ") + String(temperature) + String("\337C")); // Ausgabe Daten dht22
                               
   getDataTimer = millis();
-
-  // Ampel je nach Messwert schalten
-  if (CO2 < LIMIT_GREEN) {
-    digitalWrite(LED_GREEN, HIGH);
-    digitalWrite(LED_YELLOW, LOW);
-    digitalWrite(LED_RED, LOW);
-  } else if (CO2 < LIMIT_YELLOW) {
-    digitalWrite(LED_GREEN, LOW);
-    digitalWrite(LED_YELLOW, HIGH);
-    digitalWrite(LED_RED, LOW);
-  } else {
-    digitalWrite(LED_GREEN, LOW);
-    digitalWrite(LED_YELLOW, LOW);
-    digitalWrite(LED_RED, HIGH);
-  }
-  
     }
 }
 
