@@ -3,7 +3,7 @@ Im Original von repair-frank: CO2-Temperatur-Feuchtigkeits-Sensor mit ESP32 und 
 ## Aufbau CO2 Monitor
 [Reichelt](https://www.reichelt.de/magazin/reichelt-magazin/co2-messgeraet-einfach-und-guenstig-selber-bauen/) hat eine etwas ausführlichere Anleitung parat.
 
-Kurzform:
+Kurzform :) :
 ### Benötigt werden
 | Teile             | Werkzeug          |
 | ----------------- | ----------------- |
@@ -121,11 +121,12 @@ void scrollText(int row, String message, int delayTime, int lcdColumns) {
 Als Übergabeparameter dienen row (0 oder 1), message (Text der Zeile), delayTime (Verbleib in ms auf einer Zelle des Displays) und lcdColums (Anzahl Spalten des LCD, bereits im Code definiert).
 
 ## Anzeige der aktuellen CO2 Lage anhand einer Ampel
-Leds sind schon in der Schaltskizze eingebaut. Programmiertechnisch ist das letzte Wort noch nicht gesprochen.
+Leds sind schon in der Schaltskizze eingebaut. Programmiertechnisch ist im Code alles vorhanden. Grenzwerte lassen sich indviduell anpassen.
 
 ## Erweiterungen
 - Das Display ist recht hell, vielleicht lässt es sich noch etwas dimmen oder abschalten wenn nicht benötigt
 - Momentan läuft der CO2 Sensor auf AUTOCALIBRATION, ein händisches kalibrieren ist auch möglich und könnte zusätzlich angeboten werden
+- Ergänzung der Ampel um eine Hupe
 
 ## nützliche Links
 - [MH-Z19](https://github.com/WifWaf/MH-Z19) Library von Jonathan Dempsey
