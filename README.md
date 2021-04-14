@@ -26,7 +26,7 @@ Kurzform :) :
 | Abstandhalter     |
 | Schrauben         |
 ### Hardware
-Ich nutze die Entwicklungsplatine NodeMCU mit ESP32 von Joy-IT, diese besitzt 30 Pins (siehe Schaltskizze). Bei anderen Platinen ist selbstverständlich eine Prüfung und Anpassung der Pins notwendig! Der CO2 Sensor besitzt eine AUTOCALIBRATION, er nutzt dabei den tiefsten gemessenen Wert aus den letzten 24 Stunden als Grundwert (400ppm) und gleicht diesen auch mit Werten aus vorherigen Wochen ab. Daher ist es ratsam einmal am Tag dem Sensor eine ordentliche Portion Frischluft zuzuführen.
+Ich nutze die Entwicklungsplatine NodeMCU mit ESP32 von Joy-IT, diese besitzt 30 Pins (siehe Schaltskizze). Bei anderen Platinen ist selbstverständlich eine Prüfung und Anpassung der Pins notwendig! Der CO2 Sensor besitzt eine AUTOCALIBRATION, er nutzt dabei den tiefsten gemessenen Wert aus den letzten 24 Stunden als Grundwert (400ppm) und gleicht diesen auch mit Werten aus vorherigen Wochen ab. Daher ist es ratsam einmal am Tag dem Sensor eine ordentliche Portion Frischluft zuzuführen. AKtuell ist im Code diese Funktion deaktiviert und es findet ein Abgleich beim Starten statt. Also vorher ordentlich lüften!
 
 ESP32 und Sensoren auf der Platine anordnen, Abstand wegen Abwärme vom ESP32 berücksichtigen (3cm sind ein gutes Maß). Verdrahtung gemäß Schaltskizze durchführen. Eventuell Trennstellen mit Stiftleiste und Buchse vorsehen, um beispielsweise die Gehäuseoberseite inklusive Display entfernen zu können.
 
@@ -123,9 +123,11 @@ Als Übergabeparameter dienen row (0 oder 1), message (Text der Zeile), delayTim
 ## Anzeige der aktuellen CO2 Lage anhand einer Ampel
 Leds sind schon in der Schaltskizze eingebaut. Programmiertechnisch ist im Code alles vorhanden. Grenzwerte lassen sich indviduell anpassen.
 
+## Kalibrieren
+Aktuell ist das automatische Kalibrieren deaktiviert (Abgleich mit niedrigsten Wert vom Vortag), nach jedem Start kalibriert sich das Gerät selbst mit der Umgebungsluft, dazu muss zwangsläufig schon vor dem Start frische Luft her, zwei Minuten wartet das Gerät nach dem Start auf frische Luft, 20 Minuten sollten Fenster insgesamt geöffnet sein für gute Ergebnisse.
+
 ## Erweiterungen
 - Das Display ist recht hell, vielleicht lässt es sich noch etwas dimmen oder abschalten wenn nicht benötigt
-- Momentan läuft der CO2 Sensor auf AUTOCALIBRATION, ein händisches kalibrieren ist auch möglich und könnte zusätzlich angeboten werden
 - Ergänzung der Ampel um eine Hupe
 
 ## nützliche Links
