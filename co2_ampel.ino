@@ -78,7 +78,7 @@ void setup()
     lcd.setCursor(0, 0);                                    // Cursor auf erste Spalte, erste Reihe 
     lcd.print(String("Kalibriermodus:"));                   // Ausgabe auf LCD
     lcd.setCursor(0, 1);                                    // Cursor auf erste Spalte, zweite Reihe 
-    lcd.print(String("Fenster \xEFffnen"));                     // Ausgabe auf LCD
+    lcd.print(String("Fenster ""\xEF""ffnen"));             // Ausgabe auf LCD
     delay(120000);                                          // 2 Minuten warten auf frische Luft (20 wären besser!)
     myMHZ19.calibrate();                                    // Kalibrierung des "0" Punktes
     lcd.clear();                                            // LCD leeren
